@@ -1,7 +1,6 @@
 'use client'
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-import { setCookie } from 'cookies-next';
 import { useRouter } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 
@@ -18,7 +17,6 @@ export default function LanguageSelector({ initialLang = 'es' }) {
 
   const handleLanguageChange = (lang) => {
     i18n.changeLanguage(lang);
-    setCookie('lang', lang, { path: '/' });
     setIsOpen(false);
     router.refresh();
   };
